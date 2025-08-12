@@ -10,7 +10,7 @@ mkdir level_{1..20}
 cd level_1
 echo "Hi this is the" > file_1
 echo "course of linux." > file_2
-cd ~/linux_course
+cd ..
 
 #lvl 2
 cd level_2
