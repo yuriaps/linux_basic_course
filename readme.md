@@ -5,7 +5,7 @@
 `$ ./setup.sh`
 
 ## Play
-SECRET = Success
+
 if present, run `./check` to check your results
 
 Lvl1:
