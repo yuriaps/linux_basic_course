@@ -1,5 +1,7 @@
+# Cleaning previus setups
 rm -rf ~/linux_course
 
+# basic setup
 mkdir ~/linux_course
 cp -r ./resources ~/linux_course/resources
 cd ~/linux_course
