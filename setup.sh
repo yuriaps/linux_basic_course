@@ -1,11 +1,46 @@
-# Cleaning previus setups
-rm -rf ~/linux_course
+#!/bin/bash
 
-# basic setup
-mkdir ~/linux_course
-cp -r ./resources ~/linux_course/resources
-cd ~/linux_course
-mkdir level_{1..20}
+# Prompt the user for a path, with a default value
+read -p "Enter the path [~/linux_course]: " root_path
+
+# If the input is empty, set root_path to the default value ~/linux_course
+if [ -z "$root_path" ]; then
+    root_path="~/linux_course"
+fi
+
+# Expand ~ to the full home directory path
+root_path=$(eval echo "$root_path")
+
+# Validate root_path to prevent dangerous deletions
+if [ -z "$root_path" ] || [ "$root_path" = "/" ] || [ "$root_path" = "$HOME" ]; then
+    echo "Error: Invalid or dangerous path: $root_path"
+    exit 1
+fi
+
+# Display the value of root_path for confirmation
+echo "Root path set to: $root_path"
+
+# Confirm before cleaning previous setups
+if [ -d "$root_path" ]; then
+    read -p "Directory $root_path exists. Delete it? (y/N): " confirm
+    if [ "$confirm" = "y" ] || [ "$confirm" = "Y" ]; then
+        rm -rf "$root_path" || { echo "Error: Failed to remove $root_path"; exit 1; }
+    else
+        echo "Aborting setup to avoid overwriting $root_path"
+        exit 1
+    fi
+fi
+
+# Basic setup
+mkdir -p "$root_path" || { echo "Error: Failed to create $root_path"; exit 1; }
+if [ -d "./resources" ]; then
+    cp -r "./resources" "$root_path/resources" || { echo "Error: Failed to copy resources"; exit 1; }
+else
+    echo "Warning: ./resources does not exist, skipping copy"
+fi
+cd "$root_path" || { echo "Error: Failed to change to $root_path"; exit 1; }
+mkdir -p level_{1..20} || { echo "Error: Failed to create level directories"; exit 1; }
+
 
 
 #lvl 1
@@ -57,6 +92,6 @@ bash ../resources/lvl$lvl_n/create_files.sh
 cd ..
 
 
-
+echo "Setup completed successfully in $root_path"
 
 
