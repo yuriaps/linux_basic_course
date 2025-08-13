@@ -100,7 +100,7 @@ if [ "$1" = "debug" ]; then
     test_file="$root_path/level_5/dir_6/dir_7/file_9"
     if [ -f "$test_file" ]; then
         if grep -q "Success" "$test_file"; then
-            echo "[x] Passed: $test_file contains 'Success'"
+            echo "[ok] Passed: $test_file contains 'Success'"
         else
             echo "[!] Failed: $test_file does not contain 'Success'"
             exit 1
@@ -112,13 +112,13 @@ if [ "$1" = "debug" ]; then
     test_file="$root_path/level_6/dir_9/dir_4/file_7"
     if [ -f "$test_file" ]; then
         if grep -q "Success" "$test_file"; then
-            echo "[x] Passed: $test_file contains 'Success'"
+            echo "[ok] Passed: $test_file contains 'Success'"
         else
             echo "[!] Failed: $test_file does not contain 'Success'"
             exit 1
         fi
     else
-        echo "[x] Failed: $test_file does not exist"
+        echo "[ok] Failed: $test_file does not exist"
         exit 1
     fi
     echo ">> Finished tests"
