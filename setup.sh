@@ -9,51 +9,51 @@ mkdir level_{1..20}
 
 
 #lvl 1
-lvl=1
-cd level_$lvl
+lvl_n=1
+cd level_$lvl_n
 echo "Hi this is the" > file_1
 echo "course of linux." > file_2
 cd ..
 
 #lvl 2
-lvl=2
-cd level_$lvl
+lvl_n=2
+cd level_$lvl_n
 cp ../level_1/file_1 ../level_1/file_2 .
-cp ../resources/lvl$lvl/tmp3 .tmp_3
-cp ../resources/lvl$lvl/verify.sh check.sh
+cp ../resources/lvl$lvl_n/tmp3 .tmp_3
+cp ../resources/lvl$lvl_n/verify.sh check.sh
 chmod +x ./check.sh
 cd ..
 
 #lvl 3
-lvl=3
-cd level_$lvl
-cp ../resources/lvl$lvl/file1 file_1 
-cp ../resources/lvl$lvl/tmp .tmp
-cp ../resources/lvl$lvl/verify.sh check.sh
+lvl_n=3
+cd level_$lvl_n
+cp ../resources/lvl$lvl_n/file1 file_1 
+cp ../resources/lvl$lvl_n/tmp .tmp
+cp ../resources/lvl$lvl_n/verify.sh check.sh
 chmod +x ./check.sh
 cd ..
 
 #lvl 4
-lvl=4
-cd level_$lvl
-cp ../resources/lvl$lvl/file1 file_1 
-cp ../resources/lvl$lvl/tmp .tmp
-cp ../resources/lvl$lvl/verify.sh check.sh
+lvl_n=4
+cd level_$lvl_n
+cp ../resources/lvl$lvl_n/file1 file_1 
+cp ../resources/lvl$lvl_n/tmp .tmp
+cp ../resources/lvl$lvl_n/verify.sh check.sh
 chmod +x ./check.sh
 cd ..
 
 #lvl 5
-lvl=5
-cd level_$lvl
-chmod +x ../resources/lvl$lvl/create_files.sh
-bash ../resources/lvl$lvl/create_files.sh
+lvl_n=5
+cd level_$lvl_n
+chmod +x ../resources/lvl$lvl_n/create_files.sh
+bash ../resources/lvl$lvl_n/create_files.sh
 cd ..
 
 #lvl 6
-lvl=6
-cd level_$lvl
-chmod +x ../resources/lvl$lvl/create_files.sh
-bash ../resources/lvl$lvl/create_files.sh
+lvl_n=6
+cd level_$lvl_n
+chmod +x ../resources/lvl$lvl_n/create_files.sh
+bash ../resources/lvl$lvl_n/create_files.sh
 cd ..
 
 
