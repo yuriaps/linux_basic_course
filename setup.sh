@@ -17,7 +17,7 @@ cd level_2
 cp ../level_1/file_1 ../level_1/file_2 .
 cp ../resources/lvl2/tmp3 .tmp_3
 cp ../resources/lvl2/verify.sh check.sh
-chmod 777 ./check.sh
+chmod +x ./check.sh
 cd ..
 
 #lvl 3
@@ -25,7 +25,7 @@ cd level_3
 cp ../resources/lvl3/file1 file_1 
 cp ../resources/lvl3/tmp .tmp
 cp ../resources/lvl3/verify.sh check.sh
-chmod 777 ./check.sh
+chmod +x ./check.sh
 cd ..
 
 #lvl 4
