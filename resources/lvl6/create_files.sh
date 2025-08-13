@@ -15,7 +15,7 @@ for i in {1..10}; do
                 echo "Success, you found this file" > dir_$i/dir_$j/file_$k
             else
                 # Use dd to create a file of exactly 100 bytes (filled with null bytes)
-                dd if=/dev/zero of="dir_$i/dir_$j/file_$k" bs=100 count=1 2>/dev/null
+                dd if=/dev/urandom of="dir_$i/dir_$j/file_$k" bs=100 count=1 2>/dev/null
             fi
         done
     done
